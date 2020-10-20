@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import './randomWords.dart';
 import './layout.dart';
 import './rssReader.dart';
+import './createQR.dart';
 
 void main() {
   runApp(MyApp());
@@ -15,17 +16,18 @@ class MyApp extends StatelessWidget {
       title: 'Flutter テスト用',
       initialRoute: '/',
       routes: {
-        '/': (context) => _routeView(),
+        '/': (context) => RouteView(),
         '/random-words': (context) => RandomWords(),
         '/layout': (context) => Layout(),
         '/rss-reader': (context) => RssReader(),
+        '/create-qr': (context) => CreateQR(),
 
       },
     );
   }
 }
 
-class _routeView extends StatelessWidget {
+class RouteView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -55,7 +57,13 @@ class _routeView extends StatelessWidget {
                   Navigator.pushNamed(context, '/rss-reader');
                 },
               ),
-
+              FlatButton(
+                child: Text('4.QRコード作成'),
+                color: Colors.lightBlue,
+                onPressed: () {
+                  Navigator.pushNamed(context, '/create-qr');
+                },
+              ),
             ]
         )
     );
