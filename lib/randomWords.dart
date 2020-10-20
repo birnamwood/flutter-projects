@@ -16,7 +16,7 @@ class _RandomWordsState extends State<RandomWords> {
 
     return Scaffold (
       appBar: AppBar(
-        title: Text('1.ランダムな言語生成'),
+        title: Text('1.無限のリスト'),
       ),
       body: _buildSuggestions(),
     );

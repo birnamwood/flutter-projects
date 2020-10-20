@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import './randomWords.dart';
 import './layout.dart';
+import './rssReader.dart';
 
 void main() {
   runApp(MyApp());
@@ -17,6 +18,7 @@ class MyApp extends StatelessWidget {
         '/': (context) => _routeView(),
         '/random-words': (context) => RandomWords(),
         '/layout': (context) => Layout(),
+        '/rss-reader': (context) => RssReader(),
 
       },
     );
@@ -33,7 +35,7 @@ class _routeView extends StatelessWidget {
         body: Column(
             children: [
               FlatButton(
-                child: Text('1.ランダムな言語生成'),
+                child: Text('1.無限のリスト'),
                 color: Colors.lightBlue,
                 onPressed: () {
                   Navigator.pushNamed(context, '/random-words');
@@ -44,6 +46,13 @@ class _routeView extends StatelessWidget {
                 color: Colors.lightBlue,
                 onPressed: () {
                   Navigator.pushNamed(context, '/layout');
+                },
+              ),
+              FlatButton(
+                child: Text('3.RSS-READER'),
+                color: Colors.lightBlue,
+                onPressed: () {
+                  Navigator.pushNamed(context, '/rss-reader');
                 },
               ),
 
